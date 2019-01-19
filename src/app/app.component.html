@@ -1,0 +1,35 @@
+<button (click)="someClisck()">CLICK</button>
+
+<h1>{{clicked}}</h1>
+
+<input type="text" #someElement>
+<button (click)="someFn(someElement)">PIU PUI</button>
+
+{{someElement.type}}
+
+<div *ngIf="clicked > 5"> 5+ CLICKS</div>
+<div *ngIf="clicked < 5"> 5- CLICKS</div>
+<!--// OR-->
+
+<div *ngIf="clicked < 5; else moreThan5"> 5- CLICKS</div>
+<ng-template #moreThan5>
+ <div> MORE </div>
+</ng-template>
+
+
+<button (click)="anotherSwitch(1)">1</button>
+<button (click)="anotherSwitch(2)">2</button>
+<button (click)="anotherSwitch(3)">3</button>
+<button (click)="anotherSwitch(false)">CLECIK BTN</button>
+
+<div [ngSwitch]="currentNumb">
+  <p *ngSwitchCase="1">FIRST</p>
+  <p *ngSwitchCase="2">SECOND</p>
+  <p *ngSwitchCase="3">THIRD</p>
+  <p *ngSwitchDefault>DEFAULT</p>
+</div>
+
+
+<ul *ngFor="let person of people" >
+  <li> {{person.name}} - {{person.age}}</li>
+</ul>
